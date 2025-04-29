@@ -61,6 +61,7 @@ def save_to_pdf(text):
     pdf.add_page()
     pdf.set_font("Arial", size=12)
     for line in text.split('\n'):
+        line = line.encode('latin-1', 'ignore').decode('latin-1')
         pdf.cell(0, 10, txt=line.strip(), ln=True)
     output = BytesIO()
     pdf.output(output)
