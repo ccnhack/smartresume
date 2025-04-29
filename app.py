@@ -65,9 +65,7 @@ def save_to_pdf(text):
         line = line.encode('latin-1', 'ignore').decode('latin-1')
         pdf.cell(0, 10, txt=line.strip(), ln=True)
     pdf_bytes = pdf.output(dest='S').encode('latin-1')
-    output = BytesIO()
-    pdf.output(output)
-    output.seek(0)
+    output = BytesIO(pdf_bytes)
     return output
 
 st.title("Smart Resume Builder")
