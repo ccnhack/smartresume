@@ -25,6 +25,7 @@ def read_resume(file):
     return text
 
 def modify_resume(base_text, keywords):
+    base_text= base_text.encode('utf-8', 'ignore').decode('utf-8')
     updated_text = base_text
     skills_pattern = re.compile(r"(SKILLS\s*[\s\S]*?)(AWARDS|CERTIFICATIONS|PROJECTS|EXPERIENCE)", re.IGNORECASE)
     skills_match = skills_pattern.search(updated_text)
