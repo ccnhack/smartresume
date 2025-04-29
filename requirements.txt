@@ -1,0 +1,4 @@
+PyMuPDF
+fpdf
+scikit-learn
+streamlit
